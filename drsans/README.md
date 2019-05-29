@@ -14,6 +14,8 @@ All sizes of Dr. Sans have a stroke (or at least an attempt at a stroke) through
 All numerals have the same width, including the 1, specifically so that columns of numbers line up.
 I'm not sure if the slightly irregular spacing of the 1 is the greater evil, but it's what I've decided to go with.
 
+Yes, there are four different kinds of dashes: hyphen-minus, actual minus (same width as the plus symbol) at 173/0xAD,  and then the en-dash and em-dash.
+
 The 9-pixel size of Dr. Sans has an unusually squat look.
 This is because standard practice is to make the tiniest sizes of a font a bit more squat, because it makes it more readable.
 
