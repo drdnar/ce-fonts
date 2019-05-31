@@ -9,7 +9,7 @@ times.8xv: TMSRE13.fnt TMSRF16.fnt TMSRE19.fnt TMSRF20.fnt TMSRE21.fnt TMSRF23.f
 	-f TMSRE21.fnt -l 16 -c 3 -x 7 -s serif -w normal \
 	-f TMSRF23.fnt -l 18 -c 5 -x 9 -s serif -w normal \
 	-f TMSRF27.fnt -l 21 -c 5 -x 10 -s serif -w normal \
-	times.bin
-	convhex -a -v -n times times.bin times.8xv
+	Times.bin
+	convhex -a -v -n Times Times.bin Times.8xv
 
-all: times.8xv
+all: Times.8xv

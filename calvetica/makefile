@@ -7,7 +7,7 @@ calvetica.8xv: HELVE13.fnt HELVE16.fnt HELVE20.fnt HELVE24.fnt HELVE29.fnt
 	-f HELVE20.fnt -a 0 -b 1 -c 4 -x 7 -s sans-serif -w normal \
 	-f HELVE24.fnt -a 1 -b 1 -c 5 -x 9 -s sans-serif -w normal \
 	-f HELVE29.fnt -a 1 -b 1 -c 6 -x 11 -s sans-serif -w normal \
-	calvetica.bin
-	convhex -a -v -n calvetic calvetica.bin calvetica.8xv
+	Calvetica.bin
+	convhex -a -v -n Calvetic Calvetica.bin Calvetica.8xv
 
-all: calvetica.8xv
+all: Calvetica.8xv
