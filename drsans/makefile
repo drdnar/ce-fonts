@@ -6,6 +6,8 @@ else
 RM         = rm -f
 endif
 
+all: $(CALCNAME).8xv
+
 $(CALCNAME).bin: drsans-06-bold.fnt drsans-06-normal.fnt drsans-07-bold.fnt drsans-07-normal.fnt drsans-09-bold.fnt drsans-09-normal.fnt
 	convfont -o fontpack -N "Dr. Sans" -P "Calculator 1252" \
 	-D "A font designed for maximum readability" \
@@ -19,12 +21,10 @@ $(CALCNAME).bin: drsans-06-bold.fnt drsans-06-normal.fnt drsans-07-bold.fnt drsa
 	$(CALCNAME).bin
 
 $(CALCNAME).8xv: $(CALCNAME).bin
-	convhex -a -v -n $(CALCNAME) $(CALCNAME).bin $(CALCNAME).8xv
-
-all: $(CALCNAME).8xv
+	convbin --archive --name $(CALCNAME) --iformat bin --oformat 8xv --input $(CALCNAME).bin --output $(CALCNAME).8xv
 
 clean:
 	$(RM) $(CALCNAME).bin
 	$(RM) $(CALCNAME).8xv
 
-.PHONY: clean
+.PHONY: all clean

@@ -1,4 +1,14 @@
-times.8xv: TMSRE13.fnt TMSRF16.fnt TMSRE19.fnt TMSRF20.fnt TMSRE21.fnt TMSRF23.fnt TMSRF27.fnt
+CALCNAME ?= Times
+
+ifeq ($(OS),Windows_NT)
+RM         = del /q /f 2>nul
+else
+RM         = rm -f
+endif
+
+all: $(CALCNAME).8xv
+
+$(CALCNAME).bin: TMSRE13.fnt TMSRF16.fnt TMSRE19.fnt TMSRF20.fnt TMSRE21.fnt TMSRF23.fnt TMSRF27.fnt
 	convfont -o fontpack -N "Times" -P "ISO-8859-1" \
 	-D "A font you've seen so much you're bored of it." \
 	-V "1.0.0.0" \
@@ -9,7 +19,13 @@ times.8xv: TMSRE13.fnt TMSRF16.fnt TMSRE19.fnt TMSRF20.fnt TMSRE21.fnt TMSRF23.f
 	-f TMSRE21.fnt -l 16 -c 3 -x 7 -s serif -w normal \
 	-f TMSRF23.fnt -l 18 -c 5 -x 9 -s serif -w normal \
 	-f TMSRF27.fnt -l 21 -c 5 -x 10 -s serif -w normal \
-	Times.bin
-	convhex -a -v -n Times Times.bin Times.8xv
+	$(CALCNAME).bin
 
-all: Times.8xv
+$(CALCNAME).8xv: $(CALCNAME).bin
+	convbin --archive --name $(CALCNAME) --iformat bin --oformat 8xv --input $(CALCNAME).bin --output $(CALCNAME).8xv
+
+clean:
+	$(RM) $(CALCNAME).bin
+	$(RM) $(CALCNAME).8xv
+
+.PHONY: clean

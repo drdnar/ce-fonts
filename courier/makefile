@@ -1,4 +1,14 @@
-courier.8xv: COURE13.fnt COURF16.fnt COURE20.fnt COURF20.fnt COURF25.fnt
+CALCNAME ?= Courier
+
+ifeq ($(OS),Windows_NT)
+RM         = del /q /f 2>nul
+else
+RM         = rm -f
+endif
+
+all: $(CALCNAME).8xv
+
+$(CALCNAME).bin: COURE13.fnt COURF16.fnt COURE20.fnt COURF20.fnt COURF25.fnt
 	convfont -o fontpack -N "Courier" -P "ISO-8859-1" \
 	-D "A common monospaced font." \
 	-V "1.0.0.0" \
@@ -7,7 +17,13 @@ courier.8xv: COURE13.fnt COURF16.fnt COURE20.fnt COURF20.fnt COURF25.fnt
 	-f COURE20.fnt -a 0 -b 1 -c 4 -x 7 -s serif -s monospaced -w normal \
 	-f COURF20.fnt -a 0 -b 1 -c 4 -x 7 -s serif -s monospaced -w bold \
 	-f COURF25.fnt -a 0 -b 1 -c 5 -x 8 -s serif -s monospaced -w normal \
-	Courier.bin
-	convhex -a -v -n Courier Courier.bin Courier.8xv
+	$(CALCNAME).bin
 
-all: Courier.8xv
+$(CALCNAME).8xv: $(CALCNAME).bin
+	convbin --archive --name $(CALCNAME) --iformat bin --oformat 8xv --input $(CALCNAME).bin --output $(CALCNAME).8xv
+
+clean:
+	$(RM) $(CALCNAME).bin
+	$(RM) $(CALCNAME).8xv
+
+.PHONY: clean
