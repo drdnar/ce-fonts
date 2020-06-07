@@ -1,4 +1,4 @@
-CALCNAME ?= calvetica
+CALCNAME ?= Calvetica
 
 ifeq ($(OS),Windows_NT)
 RM         = del /q /f 2>nul
