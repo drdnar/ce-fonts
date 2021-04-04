@@ -10,6 +10,8 @@ Perhaps someone could dump fonts from an old laser or dot-matrix printer?
 
 The Dr. Sans family uses a modified [Windows 1252](https://en.wikipedia.org/wiki/Windows-1252) codepage: there are a handful of characters changed and some added. The other fonts are more or less just straight Windows 1252, because I didn't feel like adapting them to have the additional characters.
 
+For convenience, `calc1252.h` contains a long list of `#defines` for special characters to make them easier to use in your program.
+
 The following characters are removed from Windows 1252: 
 - All _combining_ diacritic marks, as FontLibC does not have support for combining marks: 
   - Circumflex ˆ 
