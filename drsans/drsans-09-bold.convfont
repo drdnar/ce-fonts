@@ -2337,22 +2337,22 @@ Data:
 Code point: 'z'
 Name: Lowercase z
 Unicode: 'z'
-Width: 6
+Width: 8
 Data:
-            
-            
-            
-            
-            
-##########  
-      ####  
-    ####    
-  ####      
-####        
-##########  
-            
-            
-            
+                
+                
+                
+                
+                
+##############  
+        ####    
+      ####      
+    ####        
+  ####          
+##############  
+                
+                
+                
 Code point: '{'
 Name: Left curly bracket
 Unicode: '{'
@@ -3021,22 +3021,22 @@ Data:
 Code point: 158
 Name: Lowercase z with caron
 Unicode: U+0000017E
-Width: 6
+Width: 8
 Data:
-            
-####  ####  
-  ######    
-    ##      
-            
-##########  
-      ####  
-    ####    
-  ####      
-####        
-##########  
-            
-            
-            
+                
+  ####  ####    
+    ######      
+      ##        
+                
+##############  
+        ####    
+      ####      
+    ####        
+  ####          
+##############  
+                
+                
+                
 Code point: 159
 Name: Capital Y with diaeresis
 Unicode: U+00000178
